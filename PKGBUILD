@@ -25,15 +25,18 @@ options=()
 install=
 changelog=
 source=("http://downloads.sourceforge.net/project/linpac/LinPac/${pkgver}/${pkgname}-${pkgver}.tar.gz"
-	"var-lock-fix.patch")
+	"var-lock-fix.patch"
+        "fix-backspace.patch")
 noextract=()
 sha256sums=("00296f6f1cd61c745dc26e08985b62ddfdc5abaa7e191ad7a55cb66366986ea0"
-	"56bcbe5d08f420667ccb70e925363124cf0018449617751848d1fc4e21f973fa")
+	"3efd6fe19c740f50227274ec59d4cf298beaafc03781383e7bcb195889b97e4a"
+	"986d7e0860a5182f1a9043a39fa4fc9595c9813f18fd2d4651fbd16a78a599d1")
 validpgpkeys=()
 
 prepare() {
 	cd "$pkgname-$pkgver"
 	patch -p1 -i "$srcdir/var-lock-fix.patch"
+	patch -p1 -i "$srcdir/fix-backspace.patch"
 }
 
 build() {

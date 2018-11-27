@@ -1,0 +1,11 @@
+diff -ur orig/linpac-0.25/src/editor.cc linpac-0.25/src/editor.cc
+--- orig/linpac-0.25/src/editor.cc	2017-12-11 05:47:34.000000000 +0100
++++ linpac-0.25/src/editor.cc	2018-11-28 00:26:10.965279358 +0100
+@@ -142,6 +142,7 @@
+           case '\a':      del_ch(); break;
+           case KEY_DL:
+           case '\031':    delline(); break;
++          case 127:
+           case KEY_BACKSPACE:
+           case '\b':      backspace(); break;
+           case '\t':      cr_tab(); break;
